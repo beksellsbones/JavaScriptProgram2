@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript Program 2</title>
+  </head>
+  <body>
+    <h1>Tax Calculator</h1>
+
+  <form name="form1">
+    <p><input name="InputIncome" type="number" value="">Input Your Income</p>
+
+    <button name="CalculateTax" onClick="Calculate()" type="button" value="">Calculate Tax</button>
+
+    <p><input name="TaxOwed" type="number" value="">Tax to be Paid</p>
+  </form>
+
+    <script type="text/javascript">
+
+      function Calculate(){
+        var InputIncome = document.form1.InputIncome.value;
+        var TaxOwed = 0;
+        var TaxRate1 = InputIncome * 0.15;
+        var TaxRate2 = 4057.50 + (0.275 * (InputIncome - 27050));
+        var TaxRate3 = 14654 + (0.305 * (InputIncome - 65550));
+        var TaxRate4 = 36361 + (0.355 * (InputIncome - 136750));
+        var TaxRate5 = 93374 + (0.391 * (InputIncome - 297350));
+
+        if (InputIncome >= 0 && InputIncome < 27050) {TaxOwed = TaxRate1}
+        else if (InputIncome >= 27050 && InputIncome < 65550) {TaxOwed = TaxRate2}
+        else if (InputIncome >= 65550 && InputIncome < 136750) {TaxOwed = TaxRate3}
+        else if (InputIncome >= 136750 && InputIncome < 297350) {TaxOwed = TaxRate4}
+        else if (InputIncome >= 297350) {TaxOwed = TaxRate5};
+
+        document.form1.TaxOwed.value = TaxOwed;
+      };
+    </script>
+
+  </body>
+</html>
